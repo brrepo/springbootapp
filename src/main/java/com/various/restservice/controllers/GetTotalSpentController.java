@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Acer on 23.08.2018.
  */
 @RestController
-public class TotalSpentController {
+public class GetTotalSpentController {
     @GetMapping("/totalspent")
     public String getTotalSpent(){
         return "Hello, world";
