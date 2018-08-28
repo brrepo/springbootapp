@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RestApp2.iml" filepath="$PROJECT_DIR$/.idea/modules/RestApp2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RestApp2_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RestApp2_main.iml" group="RestApp2" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RestApp2_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RestApp2_test.iml" group="RestApp2" />
     </modules>
   </component>
 </project>

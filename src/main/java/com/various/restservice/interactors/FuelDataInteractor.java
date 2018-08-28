@@ -1,17 +1,18 @@
 package com.various.restservice.interactors;
 
 import com.various.restservice.entity.FuelData;
-import io.reactivex.Single;
+
+import java.text.ParseException;
 
 /**
- * Created by Acer on 28.08.2018.
+ * Created by alex on 8/28/18.
  */
-public abstract class FuelDataInteractor {
-    public abstract Single<FuelData> getFuelData(
+public interface FuelDataInteractor {
+    public FuelData getFuelData(
             String fueltype,
             String price,
             String volume,
             String date,     //mm.dd.yyyy
-            int driverid
-    );
+            int driverid)
+            throws ParseException;
 }
