@@ -1,9 +1,6 @@
 package com.various.restservice.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
@@ -16,11 +13,15 @@ public class FuelData {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
+    @Column(nullable = false)
     private String fuelType;
-
+    @Column(nullable = false)
     private String price;
+    @Column(nullable = false)
     private String volume;
-    private Date date;
+    @Column(nullable = false)
+    private Date transactionDate;
+    @Column(nullable = false)
     private Integer driverId;
 
     public void setFuelType(String fuelType) {
@@ -36,7 +37,7 @@ public class FuelData {
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.transactionDate = date;
     }
 
     public void setDriverId(Integer driverId) {
