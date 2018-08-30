@@ -31,14 +31,8 @@ public class GetTotalSpentByMonthController {
             @RequestParam int year
     ) {
         if (month < 1 || month > 12 || year < 1980 || year > 2200) throw new IllegalArgumentException("Month or year are invalid");
-        Iterator iter = fuelDataRepository.findByTransactionYearEqualsAndTransactionMonthEquals(year, month).iterator();
-        double sum = 0;
-        while(iter.hasNext()){
-             FuelData fuelData =  (FuelData) iter.next();
-             double priceIter = Double.valueOf(fuelData.getPrice());
-             double volIter = Double.valueOf(fuelData.getVolume());
-             sum += Math.round(priceIter * volIter * 100)/100;
-        }
-        return new Money(sum);
+        List <FuelData> in = fuelDataRepository.findByTransactionYearEqualsAndTransactionMonthEquals(year, month);
+        int sum = in.stream().mapToInt(FuelData::getTotal).sum();
+        return new Money(sum/100d);
     }
 }

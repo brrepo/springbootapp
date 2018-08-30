@@ -1,6 +1,7 @@
 package com.various.restservice.entity;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -9,19 +10,21 @@ import java.util.Date;
 @Entity
 public class FuelData {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(nullable = false)
     private String fuelType;
     @Column(nullable = false)
-    private String price;
+    private String price;             // * 100  - two significant figures
     @Column(nullable = false)
-    private String volume;
+    private String volume;            // * 100  - two significant figures
     @Column(nullable = false)
-    private int transactionDay;    //1-31
+    private int total;             // * 100  - two significant figures
     @Column(nullable = false)
-    private int transactionMonth;  //1-12
+    private int transactionDay;    // 1 - 31  - two significant figures
+    @Column(nullable = false)
+    private int transactionMonth;  // 1 - 12  - two significant figures
     @Column(nullable = false)
     private int transactionYear;
     @Column(nullable = false)
@@ -62,10 +65,23 @@ public class FuelData {
     }
 
     public Date getTransactionDate() {
-        return new Date(this.transactionYear - 1900, this.transactionMonth - 1 , this.transactionDay);
+        return new Date(this.transactionYear - 1900, this.transactionMonth - 1, this.transactionDay);
     }
 
     public Integer getDriverId() {
         return driverId;
+    }
+
+    public void calculateTotal() {
+        total = (getInt(price) * getInt(volume))/100;
+    }
+
+    private int getInt(String value){
+        Double priceD = Double.valueOf(value)*100d;
+        return priceD.intValue();
+    }
+
+    public int getTotal() {
+        return total;
     }
 }

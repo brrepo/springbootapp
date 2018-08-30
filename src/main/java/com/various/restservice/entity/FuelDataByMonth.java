@@ -1,5 +1,7 @@
 package com.various.restservice.entity;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Created by Acer on 28.08.2018.
  */
@@ -9,13 +11,14 @@ public class FuelDataByMonth {
     private String volume;
     private String total;
     private String date;
+    private SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
 
-    public FuelDataByMonth(String fuelType, String price, String volume, String total, String date, Integer driverId) {
-        this.fuelType = fuelType;
-        this.price = price;
-        this.volume = volume;
-        this.total = total;
-        this.date = date;
+    public FuelDataByMonth(FuelData data) {
+        this.fuelType = data.getFuelType();
+        this.price = data.getPrice();
+        this.volume = data.getVolume();
+        this.total = String.format ("%02d.02d", data.getTotal());
+        this.date = sdf.format(data.getTransactionDate());
     }
 
     public String getFuelType() {

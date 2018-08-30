@@ -26,6 +26,7 @@ public class FuelDataInteractorImpl implements FuelDataInteractor {
             fuelData.setFuelType(fueltype);
             fuelData.setPrice(price);
             fuelData.setVolume(volume);
+            fuelData.calculateTotal();
             fuelData.setDriverId(driverid);
             fuelData.setDate(dateSQL);
             return fuelData;
