@@ -7,6 +7,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.0.8.RELEASE/59f71e98bd9dce96ec1e562cd6c0b46804d071bf/spring-orm-5.0.8.RELEASE-sources.jar!/" />
+      <root url="jar://C:/caches/modules-2/files-2.1/org.springframework/spring-orm/5.0.8.RELEASE/59f71e98bd9dce96ec1e562cd6c0b46804d071bf/spring-orm-5.0.8.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -7,6 +7,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/2.0.4.RELEASE/9d55d603b0e1fd159b02c706cde022fc4dcf535d/spring-boot-starter-jdbc-2.0.4.RELEASE-sources.jar!/" />
+      <root url="jar://C:/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/2.0.4.RELEASE/9d55d603b0e1fd159b02c706cde022fc4dcf535d/spring-boot-starter-jdbc-2.0.4.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

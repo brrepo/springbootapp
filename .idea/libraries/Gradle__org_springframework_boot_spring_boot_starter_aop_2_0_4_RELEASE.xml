@@ -7,6 +7,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-aop/2.0.4.RELEASE/4d8319c254cd1107ba3f6eee023a463a94b23d31/spring-boot-starter-aop-2.0.4.RELEASE-sources.jar!/" />
+      <root url="jar://C:/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-aop/2.0.4.RELEASE/4d8319c254cd1107ba3f6eee023a463a94b23d31/spring-boot-starter-aop-2.0.4.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

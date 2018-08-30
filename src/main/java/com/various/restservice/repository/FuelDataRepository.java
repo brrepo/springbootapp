@@ -11,8 +11,7 @@ import java.util.List;
  */
 
 public interface FuelDataRepository extends JpaRepository<FuelData, Integer> {
-
-    //List<FuelData> findByTransactionDateIsAfterAndTransactionDateIsBefore(Date dateStart, Date dateEnd);
     List<FuelData> findAll();
     List<FuelData> findByTransactionYearEqualsAndTransactionMonthEquals(int year, int month);
+    List<FuelData> findByTransactionYearEqualsAndTransactionMonthEqualsAndDriverIdEquals(int year, int month, int driverId);
 }

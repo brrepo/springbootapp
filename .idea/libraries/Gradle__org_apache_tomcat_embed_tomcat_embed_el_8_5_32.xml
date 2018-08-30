@@ -7,6 +7,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/8.5.32/2ca52fa490e1acaeb17a0c760cd2820775f91b07/tomcat-embed-el-8.5.32-sources.jar!/" />
+      <root url="jar://C:/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/8.5.32/2ca52fa490e1acaeb17a0c760cd2820775f91b07/tomcat-embed-el-8.5.32-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
