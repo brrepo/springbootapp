@@ -17,7 +17,7 @@ public class FuelDataByMonth {
         this.fuelType = data.getFuelType();
         this.price = data.getPrice();
         this.volume = data.getVolume();
-        this.total = String.format ("%02d.02d", data.getTotal());
+        this.total = String.format ("%.02f", data.getTotal()/100d);
         this.date = sdf.format(data.getTransactionDate());
     }
 
