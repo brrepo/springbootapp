@@ -28,4 +28,13 @@ public interface FuelDataRepository extends JpaRepository<FuelData, Integer> {
             "    v.fuelType")
     List<FuelStatistics> findFuelStatistics(@Param("year") int year, @Param("month") int month);
 
+    @Query("SELECT " +
+            "    new com.various.restservice.entity.FuelStatistics(v.fuelType, sum(v.total), sum(v.volumeInt)) " +
+            "FROM " +
+            "    FuelData v " +
+            "WHERE v.transactionYear = :year AND v.transactionMonth =  :month AND v.driverId =  :driverId " +
+            "GROUP BY " +
+            "    v.fuelType")
+    List<FuelStatistics> findFuelStatistics(@Param("year") int year, @Param("month") int month, @Param("driverId") int driverId);
+
 }

@@ -16,6 +16,8 @@ import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
+import static com.various.restservice.utils.Checker.check;
+
 /**
  * Created by Acer on 23.08.2018.
  */
@@ -30,7 +32,7 @@ public class GetTotalSpentByMonthController {
             @RequestParam int month,
             @RequestParam int year
     ) {
-        if (month < 1 || month > 12 || year < 1980 || year > 2200) throw new IllegalArgumentException("Month or year are invalid");
+        check(month, year);
         List <FuelData> in = fuelDataRepository.findByTransactionYearEqualsAndTransactionMonthEquals(year, month);
         int sum = in.stream().mapToInt(FuelData::getTotal).sum();
         return new Money(sum/100d);

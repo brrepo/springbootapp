@@ -1,5 +1,7 @@
 package com.various.restservice.entity;
 
+import com.various.restservice.Constants;
+
 import java.text.SimpleDateFormat;
 
 /**
@@ -11,13 +13,13 @@ public class FuelDataByMonth {
     private String volume;
     private String total;
     private String date;
-    private SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+    private SimpleDateFormat sdf = new SimpleDateFormat(Constants.FORMAT_DATE);
 
     public FuelDataByMonth(FuelData data) {
         this.fuelType = data.getFuelType();
         this.price = data.getPrice();
         this.volume = data.getVolume();
-        this.total = String.format ("%.02f", data.getTotal()/100d);
+        this.total = String.format(Constants.FORMAT_DECIMAL, data.getTotal() / 100d);
         this.date = sdf.format(data.getTransactionDate());
     }
 

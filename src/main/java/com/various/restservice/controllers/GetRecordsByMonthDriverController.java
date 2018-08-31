@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static com.various.restservice.utils.Checker.check;
+
 /**
  * Created by Acer on 23.08.2018.
  */
@@ -28,7 +30,7 @@ public class GetRecordsByMonthDriverController {
             @RequestParam int year,
             @RequestParam int driverId
     ) {
-        if (month < 1 || month > 12 || year < 1980 || year > 2200) throw new IllegalArgumentException("Month or year are invalid");
+        check(month, year, driverId);
         List <FuelData> in = fuelDataRepository.findByTransactionYearEqualsAndTransactionMonthEqualsAndDriverIdEquals(year , month, driverId);
         List <FuelDataByMonth> out = in.stream().map(FuelDataByMonth::new).collect(Collectors.toList());
         return out;

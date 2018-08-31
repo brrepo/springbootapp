@@ -1,5 +1,6 @@
 package com.various.restservice.interactors;
 
+import com.various.restservice.Constants;
 import com.various.restservice.entity.FuelData;
 
 import java.text.ParseException;
@@ -20,7 +21,7 @@ public class FuelDataInteractorImpl implements FuelDataInteractor {
             throws ParseException
     {
     //    try {
-            SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat(Constants.FORMAT_DATE);
             java.sql.Date dateSQL=new java.sql.Date(sdf.parse(date).getTime());
             FuelData fuelData = new FuelData();
             fuelData.setFuelType(fueltype);

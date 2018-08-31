@@ -84,11 +84,11 @@ public class FuelData {
 
     public void calculateTotal() {
         volumeInt = getInt(volume);
-        total = (getInt(price) * volumeInt)/100;
+        total = (getInt(price) * volumeInt) / 100;
     }
 
-    private int getInt(String value){
-        Double priceD = Double.valueOf(value)*100d;
+    private int getInt(String value) {
+        Double priceD = Double.valueOf(value) * 100d;
         return priceD.intValue();
     }
 
