@@ -20,7 +20,7 @@ public interface FuelDataRepository extends JpaRepository<FuelData, Integer> {
     List<FuelData> findByTransactionYearEqualsAndTransactionMonthEqualsAndDriverIdEquals(int year, int month, int driverId);
 
     @Query("SELECT " +
-            "    new com.various.restservice.entity.FuelStatistics(v.fuelType, sum(v.total)) " +
+            "    new com.various.restservice.entity.FuelStatistics(v.fuelType, sum(v.total), sum(v.volumeInt)) " +
             "FROM " +
             "    FuelData v " +
             "WHERE v.transactionYear = :year AND v.transactionMonth =  :month " +

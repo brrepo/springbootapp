@@ -16,9 +16,11 @@ public class FuelData {
     @Column(nullable = false)
     private String fuelType;
     @Column(nullable = false)
-    private String price;             // * 100  - two significant figures
+    private String price;
     @Column(nullable = false)
-    private String volume;            // * 100  - two significant figures
+    private String volume;
+    @Column(nullable = false)
+    private int volumeInt;            // * 100  - two significant figures
     @Column(nullable = false)
     private int total;             // * 100  - two significant figures
     @Column(nullable = false)
@@ -81,7 +83,8 @@ public class FuelData {
     }
 
     public void calculateTotal() {
-        total = (getInt(price) * getInt(volume))/100;
+        volumeInt = getInt(volume);
+        total = (getInt(price) * volumeInt)/100;
     }
 
     private int getInt(String value){
@@ -91,5 +94,9 @@ public class FuelData {
 
     public int getTotal() {
         return total;
+    }
+
+    public int getVolumeInt() {
+        return volumeInt;
     }
 }

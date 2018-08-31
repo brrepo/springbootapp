@@ -6,11 +6,15 @@ package com.various.restservice.entity;
 public class FuelStatistics {
         private String type;
         private String total;
+        private String volume;
+        private String average;
         private long totalSum;
+        private long volumeSum;
 
-    public FuelStatistics(String type, Long total) {
+    public FuelStatistics(String type, long total, long volume) {
         this.type = type;
         this.totalSum = total;
+        this.volumeSum = volume;
     }
 
     public String getType() {
@@ -20,5 +24,16 @@ public class FuelStatistics {
     public String getTotal() {
         this.total = String.format ("%.02f", totalSum/100d);
         return total;
+    }
+
+    public String getVolume() {
+        this.volume = String.format ("%.02f", volumeSum/100d);
+        return volume;
+    }
+
+    public String getAverage() {
+        Double averageCalculated = ((double) totalSum) /((double)volumeSum);
+        this.average = String.format ("%.02f", averageCalculated);
+        return average;
     }
 }
