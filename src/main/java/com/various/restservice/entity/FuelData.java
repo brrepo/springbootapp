@@ -68,6 +68,14 @@ public class FuelData {
         return new Date(this.transactionYear - 1900, this.transactionMonth - 1, this.transactionDay);
     }
 
+    public int getTransactionMonth() {
+        return transactionMonth;
+    }
+
+    public int getTransactionYear() {
+        return transactionYear;
+    }
+
     public Integer getDriverId() {
         return driverId;
     }
