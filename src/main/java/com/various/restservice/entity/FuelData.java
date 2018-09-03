@@ -1,7 +1,6 @@
 package com.various.restservice.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -38,14 +37,17 @@ public class FuelData {
 
     public void setPrice(String price) {
         this.price = price;
+        calculateTotal();
     }
 
     public void setVolume(String volume) {
+
         this.volume = volume;
+        calculateTotal();
     }
 
     public void setDate(Date date) {
-        this.transactionDay = date.getDay();
+        this.transactionDay = date.getDate();
         this.transactionMonth = date.getMonth() + 1;
         this.transactionYear = date.getYear() + 1900;
     }
@@ -83,8 +85,8 @@ public class FuelData {
     }
 
     public void calculateTotal() {
-        volumeInt = getInt(volume);
-        total = (getInt(price) * volumeInt) / 100;
+        if( volume != null)  volumeInt = getInt(volume);
+        if (price!=null) total = (int) (getInt(price) * volumeInt) / 100;
     }
 
     private int getInt(String value) {

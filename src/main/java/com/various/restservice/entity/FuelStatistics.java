@@ -38,4 +38,15 @@ public class FuelStatistics {
         this.average = String.format (Constants.FORMAT_DECIMAL, averageCalculated);
         return average;
     }
+
+    // For testing
+    //@TODO remove in prod
+
+    public long getTotalSum() {
+        return totalSum;
+    }
+
+    public long getVolumeSum() {
+        return volumeSum;
+    }
 }
