@@ -6,4 +6,5 @@ package com.various.restservice;
 public class Constants {
     public static final String FORMAT_DATE = "MM.dd.yyyy";
     public static final String FORMAT_DECIMAL = "%.02f";
+    public static final String ADDFUELDATA = "/addfueldata";
 }

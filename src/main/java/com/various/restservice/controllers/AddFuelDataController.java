@@ -1,5 +1,6 @@
 package com.various.restservice.controllers;
 
+import com.various.restservice.Constants;
 import com.various.restservice.entity.FuelData;
 import com.various.restservice.interactors.FuelDataInteractor;
 import com.various.restservice.interactors.FuelDataInteractorImpl;
@@ -18,7 +19,7 @@ public class AddFuelDataController {
     @Autowired
     private FuelDataRepository fuelDataRepository;
 
-    @PostMapping("/addfueldata")
+    @PostMapping(Constants.ADDFUELDATA)
     public void addFuelData (
             @RequestParam String fueltype,
             @RequestParam String price,
